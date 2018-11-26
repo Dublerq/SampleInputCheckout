@@ -1,0 +1,30 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php /** @var $block \Magento\Sales\Block\Order\Info */ ?>
+<?php $_order = $block->getOrder() ?>
+<section class="admin__page-section additional-info">
+    <div class="admin__page-section-title">
+        <span class="title"><?= /* @escapeNotVerified */__('Additional Order Information') ?></span>
+    </div>
+    <div class="admin__page-section-content">
+        <div class="admin__page-section-item case-information">
+            <div class="admin__table-wrapper">
+                <table class="admin__table-secondary order-case-table">
+                    <tbody>
+                    <tr>
+                        <th class="col-guarantee-disposition"><?= /* @escapeNotVerified */__('External Order Id') ?></th>
+                        <td class="col-guarantee-disposition"><?= $block->escapeHtml($_order->getExternalOrderId() ?: __('None')) ?></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
